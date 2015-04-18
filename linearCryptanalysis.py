@@ -20,13 +20,18 @@ approxTable = [[0]*16 for i in range(16)]
 knownPlaintext = [0]*10000
 knownCiphertext = [0]*10000
 
+"""
+Convert a binary string into an integer
+"""
 def intConv(value):
     string = ''
     for i in value:
         string+= str(i)
     return int(string, 2)
 
-
+"""
+Performing a bit by bit XOR sum of two blocks of data
+"""
 def xorSum(block_one, block_two):
     return [x^y for x,y in zip(block_one, block_two)]
 
@@ -171,6 +176,9 @@ goodkey1 = [0]*10000
 def xOr(a, b):
 	return a^b
 
+"""
+Automate the process of generating a linear expression when an approximation is given
+"""
 def automatePaths(L):
     i = 0
     Pstring = ''
